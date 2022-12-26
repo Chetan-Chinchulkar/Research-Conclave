@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+                <h2>About The Speaker</h2>
+              </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+        <center>
+          <figure>
+              <a class="profile-img"><img src="{{object.pic.url}}" alt="Speaker" width="em" height="300em"/></a>
+              <h3 class="title">{{object.name}}</a></h3>
+              <h4 class="subtitle">{{object.subtitle|safe}}</h4>
+          </figure>
+        </center>
+      </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-8" align="justify" style="padding-left: 5rem; padding-right: 5rem;">
+    <br>
+    <p style="font-size: 1.6rem;">
+    {{object.content|safe|linebreaks}}
+  
+    <br><br><br><br><br>
+  </p>
+  </div><br>
+      <br><br><br>
+    </p>
+  </center>
+  </div>
+{% endblock content %}
