@@ -22,7 +22,6 @@ $admin_email_from       = 'system.logichunt@gmail.com'; /* Admin email from whic
 
 $admin_email_from_name  = 'LogicHunt System'; /* Admin name from which email will be sent */
 
-
 $use_custom_subject = false; /* If you want to use custom subject then set true. To use form subject just ignore it. */
 
 $admin_email_subject = 'A new message from LogicHunt Demo'; /* Custom email subject what the admin will get as contact email alert*/
@@ -51,7 +50,6 @@ $mail_send_type = false; /*if $mail_send_type is set to smtp, then complete this
 //---------------------------------------------------------------------------------
         //LGX MAIL CONFIGURATION END
 //---------------------------------------------------------------------------------
-
 
 
 /******* SMTP CONFIGURATION *************
