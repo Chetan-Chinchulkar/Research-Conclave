@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = BASE_DIR/'templates'
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +27,7 @@ SECRET_KEY = "django-insecure-h7n@dwmm*s_zh+r(p20qyg1yh&&p4_**cj^rg(xhch68d)!&q2
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['researchconclave.pythonanywhere.com']
 
 
 # Application definition
@@ -37,8 +39,58 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "myapp.apps.MyappConfig"
+    # "myapp.apps.MyappConfig",
+
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.microsoft",
+
+    "bootstrap4",
+    "crispy_forms",
+    "ckeditor",
+
+    "members",
+    "faq",
+    "team",
+    "event",
+    "home",
+    "prev_edition",
+    "sponsor",
+    "schedule",
+    "phonenumber_field",
+    "import_export",
+    "django_filters",
+    "django_cleanup.apps.CleanupConfig",
 ]
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'microsoft': {
+        'tenant': 'organizations',
+    },
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = 'home:home'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -55,7 +107,7 @@ ROOT_URLCONF = "RIC.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATES_DIR,],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -66,6 +118,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = "RIC.wsgi.application"
@@ -117,3 +174,12 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+STATIC_DIR = BASE_DIR/'static'
+STATICFILES_DIRS = [STATIC_DIR,]
+MEDIA_ROOT = BASE_DIR/'media'
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
