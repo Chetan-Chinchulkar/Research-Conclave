@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+                <h2>{{object}}</h2>
+                <h3>{{object.subtitle}}</h3>
+              </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+
+{% if object.id == 2 %}
+
+{% for i in workshop_list %}
+<center>
+  <div class="container" style="width: 100%;">
+
+    {% ifequal forloop.counter0|divisibleby:"2" True %}
+    <div class="row" style="background-color: #FFFDD0;">
+    {% else %}
+    <div class="row" style="background-color:white;">
+    {% endifequal %}
+
+
+      <h1>{{i.name|safe}}</h1><br>
+
+      <center>
+        <h4>
+          <b>Date and Time: {{i.organised_at}}</b>
+        </h4>
+      </center>
+
+      <br />
+      <center>
+        <p style="padding-left: 5rem; padding-right: 5rem;">
+          {{i.desc|safe}}
+        </p><br>
+
+      </center>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12 col-md-6"><a href="{{i.link}}" class="lgx-btn lgx-btn-red"><b>SPEAKER: {{i.conducted_by|safe}}
+</b></a></div>
+        <!--  -->
+        <div class="col-sm-6 col-xs-12 col-md-6">
+          <h4><b><a href="" class="lgx-btn lgx-btn-red">REGISTER HERE</a></b></h4>
+        </div>
+      </div>
+      </h4>
+    </div>
+  </div>
+
+</center>
+{% endfor %}
+{% else %}
+<div class="container">
+  <div class="container">
+    <p>{{object.content|safe|linebreaks}}</p>
+  </div>
+
+</div>
+{% endif %}
+<!-- <a href="{% static 'files/RC_2022_Abstract_Template.doc' %}">link</a> -->
+
+
+{% endblock content %}

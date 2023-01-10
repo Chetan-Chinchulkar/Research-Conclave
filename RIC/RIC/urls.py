@@ -1,7 +1,7 @@
-"""RIC URL Configuration
+"""RC URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,8 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
+
+admin.site.site_header = "RIC Admin"
+admin.site.site_title = "RIC Admin Portal"
+admin.site.index_title = "Welcome to RIC ADMIN PORTAL"
+
 
 urlpatterns = [
-    path("",include('myapp.urls') ),
-    path("admin/", admin.site.urls),
-]
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('', include('home.urls')),
+    path('rc/', include('prev_edition.urls')),
+    path('profile/', include('members.urls')),
+    path('event/', include('event.urls')),
+    path('team/', include('team.urls')),
+    path('faq/', include('faq.urls')),
+    path('sponsor/', include('sponsor.urls')),
+    path('schedule/', include('schedule.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
