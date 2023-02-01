@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+              <h2><u>Steering Committee</u></h2>
+            </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<br>
+<section class="team-section text-center my-5" style="overflow-x: hidden;">
+
+
+  {% for i in team_list %}
+  {% if i.cat.name == "1" %}
+
+  <div class="row">
+    <center>
+      <img src="{{i.pic.url}}"
+        style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;">
+      <h5 class="font-weight-bold mt-4 mb-3">
+        <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+        <p><strong>{{i.position}}<br></strong></p>
+        <p><strong>{{i.position.subtitle}}<br></strong></p>
+
+      </h5>
+    </center>
+  </div>
+
+  {% endif %}
+  {% endfor %}
+
+<br><br>
+  <div class="row">
+
+
+        <!-- Grid column -->
+        <div class="row">
+          <div class="col-xs-12">
+              <div class="sponsors-area">
+                {% for i in team_list %}
+
+                {% if i.cat.name == "2" %}
+                  <div class="single">
+                      <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events"/></a>
+                      <div class="speaker-info">
+                        <h5 class="font-weight-bold mt-4 mb-3">
+                          <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                          <p><strong>{{i.position}}<br></strong></p>
+                        </h5>
+                      </div>
+                  </div>
+                  {% endif %}
+
+    {% endfor %}
+
+
+              </div>
+          </div>
+          <!--//col-->
+      </div>
+    <!-- Grid column -->
+
+  </div>
+    <div class="row">
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="sponsors-area">
+            {% for i in team_list %}
+
+            {% if i.cat.name == "3" %}
+              <div class="single">
+                  <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events"/></a>
+                  <div class="speaker-info">
+                    <h5 class="font-weight-bold mt-4 mb-3">
+                      <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                      <p><strong>{{i.position}}<br></strong></p>
+                    </h5>
+                  </div>
+              </div>
+              {% endif %}
+
+{% endfor %}
+
+
+          </div>
+      </div>
+      <!--//col-->
+  </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="sponsors-area">
+            {% for i in team_list %}
+
+            {% if i.cat.name == "4" %}
+              <div class="single">
+                  <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events"/></a>
+                  <div class="speaker-info">
+                    <h5 class="font-weight-bold mt-4 mb-3">
+                      <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                      <p><strong>{{i.position}}<br></strong></p>
+                    </h5>
+                  </div>
+              </div>
+              {% endif %}
+
+{% endfor %}
+
+
+          </div>
+      </div>
+      <!--//col-->
+  </div>
+  </div>
+</section>
+<section class="team-section text-center my-5" style="overflow-x: hidden;">
+  <br><br><br>
+  <center><b>
+      <h2><u>Student Committee</u></h2>
+    </b></center>
+  <br><br><br>
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="sponsors-area">
+            {% for i in team_list %}
+
+            {% if i.cat.name == "5" %}
+              <div class="single">
+                  <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events"/></a>
+                  <div class="speaker-info">
+                    <h5 class="font-weight-bold mt-4 mb-3">
+                      <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                      <p><strong>{{i.position}}<br></strong></p>
+                    </h5>
+                  </div>
+              </div>
+              {% endif %}
+
+{% endfor %}
+
+
+          </div>
+      </div>
+      <!--//col-->
+  </div>
+  </div>
+
+</section>
+<section>
+  <br><br><br><br>
+  <center><b>
+      <h2><u>Departmental Faculty Advisors</u></h2>
+    </b></center>
+  <br><br>
+<center>
+  <div class="row" >
+    <div class="col-sm-6 ">
+      <h3><u>Dept. of Biosciences &amp; Bioengineering</u></h3>
+      Dr. Sachin Kumar, IIT Guwahati<br>
+      Dr. Kusum Kumari Singh, IIT Guwahati<br>
+      <h3><u>Dept. of Chemical Engineering</u></h3>
+      Dr. Tamal Banerjee, IIT Guwahati<br>
+      <h3><u>Dept. of Chemistry</u></h3>
+      Prof. P.K. Iyer, IIT Guwahati<br>
+      Dr. Subhendu Sekhar Bag, IIT Guwahati<br>
+      <h3><u>Dept. of Civil Engineering</u></h3>
+      Dr. Bulu Pradhan, IIT Guwahati<br>
+      Dr. Kaustubh Dasgupta, IIT Guwahati<br>
+      <h3><u>Dept. of Comp. Science &amp; Engineering</u></h3>
+      Dr. Samit Bhattacharya, IIT Guwahati<br>
+      Dr. Arijit Sur, IIT Guwahati<br>
+      Dr. Moumita Patra, IIT Guwahati<br>
+      <h3><u>Dept. of Design</u></h3>
+      Dr. Abhishek Shrivastava, IIT Guwahati<br>
+      Dr. Pratul Kalita, IIT Guwahati<br>
+      <h3><u>Dept. of Electronics &amp; Elctrical Engineering</u></h3>
+      Dr. Debabrata Sikdar, IIT Guwahati<br>
+      Dr. Sanjib Ganguly, IIT Guwahati<br>
+      <h3><u>Centre for Environment</u></h3>
+      Dr. Lal Mohan Kundu, IIT Guwahati<br>
+    </div>
+    <div class="col-sm-6">
+      <h3><u>Dept. of Mathematics</u></h3>
+      Dr. Pratyoosh Kumar, IIT Guwahati<br>
+      Dr. Sudarshan, IIT Guwahati<br>
+      <h3><u>Dept. of Mechanical Engineering</u></h3>
+      Dr. Swarup Bag, IIT Guwahati<br>
+      Dr. Vinayak Kulkarni, IIT Guwahati
+      <h3><u>Dept. of Physics</u></h3>
+      Dr. Arunasu Sil, IIT Guwahati<br>
+      Dr. Sayan Chakrabarti, IIT Guwahati<br>
+      <h3><u>Centre for Energy</u></h3>
+      Dr. Pankaj Kalita, IIT Guwahati<br>
+      <h3><u>Centre for Nanotechnology</u></h3>
+      Dr. Partha Sarathi Gooh Pattader, IIT Guwahati<br>
+      <h3><u>Centre for Rural Technology</u></h3>
+      Dr. Ajay Kalamdhad, IIT Guwahati<br>
+      <h3><u>Centre for Linguistic Science and Technology</u></h3>
+      Prof. K. Samudravijaya, IIT Guwahati<br>
+      <h3><u>Dept. of Humanities &amp; Social Sciences</u></h3>
+      Dr. Mithilesh Kumar Jha, IIT Guwahati<br>
+      Dr. Pahi Saikia, IIT Guwahati<br>
+    </div>
+
+
+
+  </div>
+</center>
+<br><br>
+</section>
+{% endblock content %}

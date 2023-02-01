@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+              <h2><u>Registration</u></h2>
+            </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <br>
+      <br>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Registration/Login for Poster, Oral, Model Presentation,Workshop</h3>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Registration for Startup Event, Hackathon</h3>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a href="" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+{% endblock content %}
+    

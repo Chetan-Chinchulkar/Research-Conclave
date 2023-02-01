@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <h1>Your Registration Profile</h1>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Oral, Poster, Model
+    </h1>
+  {% for i in bio_list %}
+
+
+  
+  {% if i.owner == request.user %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{i.dept}} from {{i.institute}}</h5>
+          <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p>
+          <p class="card-text">For Payment,Abstracted Submission Status and Instruction related info click below</p>
+
+          <a href="{% url 'members:detail' i.id %}" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    
+    {% endfor %}
+  </div>
+  <br>
+</div>
+
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Workshop
+    </h1>
+  {% for i in workshop_bio %}
+
+  {% if i.owner == request.user %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{i.dept}}</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'members:workshop_detail' i.id %}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    
+    {% endif %}
+    
+    {% endfor %}
+  </div>
+  <br>
+</div>
+
+
+
+
+{% endblock content %}
